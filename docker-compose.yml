@@ -1,0 +1,19 @@
+version: "3"
+services:
+    http:
+        restart: always
+        image: nginx:latest
+        networks: typecho
+        ports:
+            - "8001:80"
+        volumes:
+            - "./typecho:/var/www/html"
+            - "./config/nginx/typecho.conf:/etc/nginx/conf.d/default.conf"
+            - "./logs:/data/wwwlogs"
+    php:
+        image: vmoe/php-typecho:latest
+        restart: always
+        volumes:
+            - "./typecho:/var/www/html"
+        user: 0:0
+        networks: typecho
