@@ -1,5 +1,5 @@
 ## typecho-docker
-每天凌晨3点定时打包typecho仓库最新代码为docker镜像
+每天凌晨3点定时打包typecho仓库最新代码为docker镜像。
 
 ## 快速使用
 ```
